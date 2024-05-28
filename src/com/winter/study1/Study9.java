@@ -38,7 +38,6 @@ public class Study9 {
 		int gold = 0;
 		int level = 1;
 		int mop = 3;
-	
 		System.out.println("게임을 시작합니다. 현재 레벨 : " + level + ", 현재 골드 : " + gold);
 		while(flag) {
 			System.out.println("사냥을 시작하겠습니까? // 1.예 , 2. 아니오");
