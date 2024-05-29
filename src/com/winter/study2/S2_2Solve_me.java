@@ -134,6 +134,7 @@ public class S2_2Solve_me {
 				System.out.println("프로그램을 종료합니다.");
 				return;
 			}
+			// 내일 클래스 오브젝트
 		}
 
 	}
