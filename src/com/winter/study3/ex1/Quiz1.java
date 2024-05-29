@@ -17,4 +17,14 @@ public class Quiz1 {
 //	> 강화수치
 //	> 이름
 
+//	ex1package안에 -> class 생성
+//
+//	<class> 게임컨트롤러
+//	- start 메서드 생성 
+//
+//	exMain2에 main메서드 만들고 start 메서드 호출
+
+	// StudentController 생성
+	// start메서드 선언
+	// stduentMain클래스 안에 start메서드 호출
 }
