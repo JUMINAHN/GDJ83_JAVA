@@ -27,7 +27,7 @@ public class StudentController {
 					studentView.view(students); // (5/30)students 반환** how logic ?? ----------------------------->매개변수
 												// // 활용
 				} else {
-					studentView.view3("학생정보를 먼저 입력하세요"); // --> 나중에 재활용을 위해
+					studentView.view("학생정보를 먼저 입력하세요"); // --> 나중에 재활용을 위해
 				}
 
 			} else if (select == 3) {
@@ -36,9 +36,9 @@ public class StudentController {
 				// 학생번호로 정보 검색! --> 학생번호 입력받아서 일치하는 학생 찾는 것 -> 찾은 학생의 정보 출력
 				Student student = service.findByNum(students);
 				if (student != null) {
-					studentView.view2(student);
+					studentView.view(student);
 				} else {
-					studentView.view3("검색결과가 없습니다");
+					studentView.view("검색결과가 없습니다");
 				}
 
 			} else if (select == 4) {
