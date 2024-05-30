@@ -11,13 +11,15 @@ public class StudyReturn {
 //		int result = num * num2; //사용하지 않으면 사라짐~ void 
 //	}
 
-	// 매개변수는 -> 0개이상
-	public void t5(Test t) { // t는 x001
+	// 매개변수는 -> 0개이상 /**그려보기
+	public Test t5(Test t) { // t는 x001
 		System.out.println(t.level);
-		t.level = 200; // x001에서 받은걸 넣음 << 호출된 것
+		t.level = 200; // (void) x001에서 받은걸 넣음 << 호출된 것
 
-		t = new Test(); // x001에 새로운 주소인 x002를 넣어 그러면 t는 지금 x002인데 (바뀌긴 했지만 반환하지 않았기 떄문?) --> 주소자첼
-		t.level = 500; // x002의 레벨이 500 --> 근데 이걸 반환한게 아니기 때문에 *****
+		t = new Test(); // (void) x001에 새로운 주소인 x002를 넣어 그러면 t는 지금 x002인데 (바뀌긴 했지만 반환하지 않았기 떄문?) -->
+						// 주소자첼
+		t.level = 500; // (void) x002의 레벨이 500 --> 근데 이걸 반환한게 아니기 때문에 *****
+		return t;
 	}
 
 	// 매개변수 선언 -> 5/30
