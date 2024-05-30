@@ -4,54 +4,19 @@ package com.winter.study3;
 //import com.winter.study3.student.Student;
 //
 public class ObjectStudy1 {
-//	// class가 가장 중요함!!!!!!!!!!
-//	public static void main(String[] args) {
-//		// 학생객체 생성
-//		// new로 만들면 -> 객체의 주소가 반환된다.
-//		Student s = new Student(); // 연산의 결과물을 대입하자~ --> Student타입의 객체를 넣자.
-//		// s에는 Student 타입만 담을 수 있다.
-//		// s. <- .은 ~의
-//		s.num = 2; // x100의 주소를 가지고 오든, 값을 넣든가 한다. --> s.num(멤버변수)은 int -> s에가서 int니까
-//		s.name = "Iu";
-//		// name은 student를 구성하는 구성요소지 student가 아니라는 것
-//
-//		System.out.println(s); // 주소값
-//		System.out.println(s.name); // 누구의 이름이냐~
-//		System.out.println(s.kor); // s.kor -> 이 변수를 사용하겠다. -> 다만 기본형은 초기화하지 않으면 사용할 수 없음
-//		// 힙에 만들어지는 애들은 기본적으로 초기화를 자동으로 해줌.
-//
-//		Student s2 = new Student(); // 초기화함 -> 대입
-//		System.out.println(s2.name);
-//
-//		Student s3 = null; // 이까지는 선언 가능
-//		s3 = s; // s2도 담을 수 있음
-//		// 주소를 주소에 넣겠다. ****로직 그려보기
-//		System.out.println(s3.name); // -> s3만 선언할 경우 값이 없다. 모든 변수는 사용하려면 초기화해야함
-//		// nullpointerexception = 주소가 없구나, 객체가 안만들어졌구나 인지하기;
-//		// 개발자는 에러메세지를 중요하게 봐야한다.--> 짜는 능력도 좋지만 있는 문제를 해결하는게 중요;
-//
-//		s3.name = "winter"; // 같은 주소값 공유 --> 같은 객체를 바라보게 만들었기 때문
-//		System.out.println(s.name);
-//
-//		// *****************
-//		Student s4 = new Student(); // 새로운 객체 생성 -> 새로운 학생
-//		s4.num = s.num;
-//		s4.name = s.name; // 윈터를 s4에 넣는다.
-//		s4.name = "hanl";
-//		System.out.println(s.name); // winter가 나옴 --> 주소를 집어넣은게 아니라 값을 꺼내서 집어넣었기 떄문에 *****깊은 복사
-//
-//		s.info(); // 학생의 정보 호출 -> s.메서드 호출 : 멤버 메서드 호출; //프린트하고 종료되면 삭제..
-//		// 참조변수명.메서드명(); = 호출
-//		// 멤버변수 사용 --> 참조변수명.멤버변수명();
-//		s.info(); // 재사용성, 재사용가능 -> 실행하고 종료하고 사라지고 밑으로내려감
-
 	public static void main(String[] args) {
 		StudyReturn sr = new StudyReturn();
-		// 메서드 반환 타입 확인
-		// int reuslt = sr.t1();
-		// System.out.println(result);
-		// sr.t2();
+		int sal = 5000000; // 변수명이 같을 뿐 중복선언이 아니다.
+		sr.t4(sal);
 
+		// ***5/30 -> 연습(구조 그려보기)
+		Test test = new Test();
+		test.level = 1;
+		// x001의 주소를 받앗어
+		sr.t5(test); // test type이니까 test타입의 객체를 만들어야 가능 --> 주소만 받아오고 ****주소 자체만 온다고 판단하면 됨
+		// 신규 x002를 쓰려면 return으로 반환받아야 했을 것
+
+		// 우리친구 x001에 대한 레벨 호출 --> return 받은게 없으면 --> 그냥 눈에보이는것만 있다고생각하자
+		System.out.println(test.level); // 주소에 담긴 값을 호출 ->x001에대한 호출만 한거기 때문
 	}
 }
-//	}
