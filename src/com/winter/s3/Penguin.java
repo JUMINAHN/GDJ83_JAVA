@@ -2,10 +2,12 @@ package com.winter.s3;
 
 //날개
 public class Penguin extends Bird {
+	// 날지못하니까 안받음
 
-	public void fly() {
+	@Override
+	public void sleep() {
 		// TODO Auto-generated method stub
 
-	} // 최종적으로 상속받은 애들 다 오버라이딩 해야함
+	}
 
 }

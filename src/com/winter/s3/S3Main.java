@@ -1,6 +1,8 @@
 package com.winter.s3;
 
 public class S3Main {
+	// 인터페이스는 다른 인터페이스 상속가능, 다른 클래스 사오가능
+
 	// 자식클래스명 is a 부모클래스명 -> 이 의미가 맞습니까? (의미가 맞지않으면 사용할 수 없음)
 	// ex) 호랑이는 동물이다, 새는 동물이다..
 	// 자식 has a 부모 --> 자식계열이면 상속이 아닌 멤버변수를 쓰자
@@ -42,5 +44,11 @@ public class S3Main {
 
 		Tiger animal3 = (Tiger) dropShip[0];
 		// 다른 타입도 넣을 수 있음
+
+		// 또 다른 이름의 추상클래스 -> 추상메서드만 가지고 있는 것
+		Eagle eagle = new Eagle();
+		Airplane airplane = new Airplane(); // 같은 타입이ㄴ니까 하나의 배열안에 담을 수도 있음
+		Fly fly = eagle;
+		fly = airplane;
 	}
 }
