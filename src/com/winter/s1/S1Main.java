@@ -13,19 +13,19 @@ public class S1Main {
 		for (int i = 0; i < newAddSs.length; i++) {
 			System.out.println(newAddSs[i]);
 		}
-		for (int i = 0; i < newRemoveSs.length; i++) {
-			System.out.println(newRemoveSs[i]);
+		for (int j = 0; j < newRemoveSs.length; j++) {
+			System.out.println(newRemoveSs[j]);
 		}
 
 		// Qstudy
 		QStudy qs = new QStudy();
 		int[] newAddQs = qs.add(ar);
 		int[] newRemoveQs = qs.remove(ar);
-		for (int i = 0; i < newAddQs.length; i++) {
-			System.out.println(newAddQs[i]);
+		for (int k = 0; k < newAddQs.length; k++) {
+			System.out.println(newAddQs[k]);
 		}
-		for (int i = 0; i < newRemoveQs.length; i++) {
-			System.out.println(newAddQs[i]);
+		for (int m = 0; m < newRemoveQs.length; m++) {
+			System.out.println(newAddQs[m]);
 		}
 
 	}

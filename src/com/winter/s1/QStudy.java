@@ -1,20 +1,26 @@
 package com.winter.s1;
 
+import java.util.Scanner;
+
 public class QStudy { // 선입선출
+	Scanner sc = new Scanner(System.in);
+
 	public int[] add(int[] ar) {
-		// 스택구조 -> 먼저들어온게 맨끝, 오른쪽이 끝
-		// 처음에 0, 1이라는 데이터가 쌓이는 것 : 왼쪽에 1 0
-		// 2 1 0
-
-		// 받은 배열에서 하나의 임의의 데이터를 추가
-		// 제일 앞에 추가되는 것 -> unshift처럼
-		// 추가된 배열을 return하자
-
-		return;// 인트배열타입
+		int newAddQ[] = new int[ar.length + 1]; // 새로운 배열
+		for (int i = 0; i < ar.length; i++) { // 맨앞에 인덱스에 새로운 것 추가
+			newAddQ[i] = ar[i];
+		}
+		System.out.println("마지막 인덱스에 추가할 숫자를 넣어주세요 : ");
+		newAddQ[newAddQ.length - 1] = sc.nextInt();
+		return newAddQ;// 인트배열타입
 	}
 
 	public int[] remove(int[] ar) {
-		// 하나의 요소를 삭제 -> 맨 뒤의 요소 삭제
-
+		// 하나의 요소를 삭제 -> 맨 뒤에 인덱스를 삭제하고, 삭제된 배열을 리턴하자
+		int newRemoveQ[] = new int[ar.length - 1];
+		for (int i = 1; i < newRemoveQ.length; i++) { // 맨앞에 0번 인덱스 삭제
+			newRemoveQ[i] = ar[i];
+		}
+		return newRemoveQ;
 	}
 }
