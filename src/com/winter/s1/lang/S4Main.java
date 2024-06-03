@@ -40,6 +40,15 @@ public class S4Main {
 			System.out.println("해당 파일은 이미지 파일입니다.");
 		} else {
 			System.out.println("이미지 파일이 아닙니다.");
+		} // 수정하고 더 다르게 짤 수 있는 방법은 없을까 고민하기~
+
+		// 선생님 새로운 풀이 --> 자바스크립트에서 file 확장자 동일 구현
+		String[] files = { "jpg", "png", "gif" };
+		for (int i = 0; i < files.length; i++) {
+			if (result.equals(files[i])) {
+				System.out.println("이미지 파일입니다.");
+				break;
+			}
 		}
 	}
 }
