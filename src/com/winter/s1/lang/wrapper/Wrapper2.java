@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Wrapper2 {
 	// Q. 비번을 넣었을때 하나라도 대문자가 나오는가? 문제
-	// Q. 비번 길이는 최소 6글자 이상이어야하고, 대소문자 숫자 1개이상 있어야한다. (homework); --> 숫자검증 isDigit;
+	// Q. 대소문자 숫자 1개이상 있어야한다.
+	// Q. 비번 길이는 최소 6글자 이상이어함 (homework); --> 숫자검증 isDigit;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("PW를 입력하세요 : ");

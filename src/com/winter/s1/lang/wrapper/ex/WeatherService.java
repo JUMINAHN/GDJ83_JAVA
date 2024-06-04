@@ -30,6 +30,7 @@ public class WeatherService {
 			WeatherDTO w = new WeatherDTO(); // 객체를 생성해서 배열에 넣어줘야함***
 			wAr[i] = w;
 		}
+
 		for (int i = 0; i < ar.length / 4; i++) {
 			wAr[i].setCity(ar[i * 4]);
 			wAr[i].setGion(Double.parseDouble(ar[i * 4 + 1]));
