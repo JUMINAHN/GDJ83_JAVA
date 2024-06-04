@@ -4,7 +4,8 @@ public class StringBuffer1 {
 
 	public static void main(String[] args) {
 		// immutable
-		StringBuffer sb = new StringBuffer();
+		StringBuffer sb = new StringBuffer(); // 쓰래드에 더 안전하다.
+		StringBuilder sb2 = new StringBuilder();
 		// 문자열을 누적 시키고 싶을 때 (하나의 객체에 다 담으려고 하는것, 새로운 객체 생성 없이)
 		// winter와 iu를 더하고 싶음
 		sb.append("winter");
