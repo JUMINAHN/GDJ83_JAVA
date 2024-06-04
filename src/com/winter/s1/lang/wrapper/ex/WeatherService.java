@@ -51,7 +51,7 @@ public class WeatherService {
 		 * wAr[0].setStatus(ar[2]); wAr[0].setHumidity(Integer.parseInt(ar[3]));
 		 * 
 		 * wAr[1].setCity(ar[4]); wAr[1].setGion(Double.parseDouble(ar[5]));
-		 * wAr[1].setStatus(ar[6]); wAr[1].setHumidity(Integer.parseInt(ar[7]));
+		 * wAr[1].setStatus(ar[6]); wAr[1].setHumidity(Integer.parseInt(ar[7]));/
 		 * 
 		 * wAr[2].setCity(ar[8]); wAr[2].setGion(Double.parseDouble(ar[9]));
 		 * wAr[2].setStatus(ar[10]); wAr[2].setHumidity(Integer.parseInt(ar[11]));
