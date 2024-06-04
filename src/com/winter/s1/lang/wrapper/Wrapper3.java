@@ -39,23 +39,27 @@ public class Wrapper3 {
 		// substring?
 		int sum = 0;
 		boolean flag = true;
-		for (int i = 0; i < jumin.length(); i++) {
-			String n = jumin.substring(i, i + 1);
+		String jumin1 = jumin.replace("-", "0");
+		for (int i = 0; i < jumin1.length(); i++) {
+			String n = jumin1.substring(i, i + 1);
 			int n1 = Integer.parseInt(n); // 추출한게 n이다
-			if (n1 >= 0 && n1 <= 8) {
+			if (n1 >= 0 && n1 <= 5) {
 				sum += (n1 * (i + 2));
 			} else if (n1 == 6) { // jumin.charAt(6)
 				sum += 0;
-			} else if (n1 > 9 && n1 <= 12) {
+			} else if (n1 >= 9 && n1 <= 12) {
 				sum += (n1 * (i - 7));
+			} else if (n1 == 7 || n1 == 8) {
+				sum += (n1 * (i + 2));
 			}
 		}
 		System.out.println("총합은 ? : " + sum);
 		int other = (sum % 11); // 나머지
+		System.out.println("나머지? : " + other);
 		if (other >= 10) {
-			flag = ((other / 10) == jumin.charAt(13));
+			flag = ((other % 10) == jumin1.charAt(12));
 		} else {
-			flag = (other == jumin.charAt(13));
+			flag = (other == jumin1.charAt(12));
 		}
 
 		if (flag) {
