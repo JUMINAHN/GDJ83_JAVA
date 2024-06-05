@@ -91,9 +91,8 @@ public class WeatherService {
 		WeatherDTO[] newAr = new WeatherDTO[ar.length - 1];
 		for (int i = 0; i < newAr.length; i++) {
 			if (findW == ar[i]) { // 2면
-				for (int j = 0; j < ar.length - i; j++) {// 3 -4만
-					newAr[i] = ar[i + 1];
-				}
+				newAr[i] = ar[i + 1];
+				continue;
 			}
 			newAr[i] = ar[i]; // 이게 범위값을 초과하니까
 		}
