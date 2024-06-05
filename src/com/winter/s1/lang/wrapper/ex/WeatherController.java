@@ -32,6 +32,9 @@ public class WeatherController {
 				// 정보 출력 weatherview
 				this.weatherView.view(dtos); // 만들어놓은것***
 			} else if (select == 2) {
+				WeatherDTO wd = this.weatherService.findByCity(dtos);
+				this.weatherView.view(wd);
+			} else if (select == 3) {
 				System.out.println("프로그램이 종료 됩니다.");
 				flag = false;
 				// 메서드내에서 종료할거면 return;

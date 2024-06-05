@@ -1,5 +1,7 @@
 package com.winter.s1.lang.wrapper.ex;
 
+import java.util.Scanner;
+
 public class WeatherService {
 
 	private StringBuffer sb; // null
@@ -39,22 +41,36 @@ public class WeatherService {
 		return dtos; // 배열명을 리턴해주자
 	}
 
-	// 날씨 정보 도시명으로 검색 -> 서울 입력하면 서울 정보를 찾아서 출력하고 싶은 것
-	// 검색해서 해당 날씨 정보를 return; 출력은 view에서
-	// 메서드명은 findByCity;
 	// Weathercontroller에서 serive랑 view 만들어놈, service에서 init findbyId만들 것
 	// 즉 2번 누르면 findbyID호출해서 찾은 것을 리턴하면->호출한쪽 (controller)
-	// controller에서 받은걸 view에서 출력
-	// view에는 날씨 정보들을 출력하는게 있음 -> view에는 하나만 만들자
 	// 날씨정보들이 있어야 검색을 찾을 건데 날씨 정보들을 컨트롤러에 보관하고 있음 -> 이 날씨 정보들을 ws에 보내야 거기서 검색할 것
 
-	// 그럼 배열중에 하나 도시명을 - 배열하나 weatherdto만 찾으면 되지 않을까?
-	// 1.메서드를 만들고 잘호출되었는지 선언부터해보자
-	public void findByCity() {
-		System.out.println("findByCity 메서드 호출");
+	public WeatherDTO findByCity(WeatherDTO[] dtos) { // 위치를 받아옴 -> WeatherDTO
+		Scanner sc = new Scanner(System.in);
+		System.out.println("찾고 싶은 지역은 입력해주세요 : ");
+		String location = sc.next();
+		// dto 배열 -> 서울 -> 부산 -> 제주 -> 광주 순
+		for (int i = 0; i < dtos.length; i++) {
+			if (location.equals(dtos[i].getCity())) {
+				return dtos[i];
+			}
+		}
+		return null;
 	}
 
 }
+
+//		if (location.equals("서울")) {
+//			return dtos[0];
+//		} else if (location.equals("부산")) {
+//			return dtos[1];
+//		} else if (location.equals("제주")) {
+//			return dtos[2];
+//		} else if (location.equals("광주")) {
+//			return dtos[3];
+//		} else {
+//			return null;
+//		}
 
 // 방법 1
 //		for (int i = 0; i < infos.length; i = i + 4) { // 16번도는 것

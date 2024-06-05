@@ -13,6 +13,13 @@ public class WeatherView {
 			System.out.println(dto[i].getHumidity());
 			System.out.println("==============");
 		}
+	}
 
+	public void view(WeatherDTO wd) {
+		System.out.println(wd.getCity());
+		System.out.println(wd.getGion());
+		System.out.println(wd.getStatus());
+		System.out.println(wd.getHumidity());
+		System.out.println("==============");
 	}
 }
