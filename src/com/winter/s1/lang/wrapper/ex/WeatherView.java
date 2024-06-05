@@ -15,11 +15,18 @@ public class WeatherView {
 		}
 	}
 
+	// 선생님 풀이
 	public void view(WeatherDTO wd) {
-		System.out.println(wd.getCity());
-		System.out.println(wd.getGion());
-		System.out.println(wd.getStatus());
-		System.out.println(wd.getHumidity());
-		System.out.println("==============");
+
+		if (wd != null) {
+			System.out.println(wd.getCity());
+			System.out.println(wd.getGion());
+			System.out.println(wd.getStatus());
+			System.out.println(wd.getHumidity());
+			System.out.println("==============");
+		} else {
+			System.out.println("날씨 정보가 없다.");
+			System.out.println("==============");
+		}
 	}
 }

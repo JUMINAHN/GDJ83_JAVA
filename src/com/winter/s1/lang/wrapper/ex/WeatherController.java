@@ -34,6 +34,7 @@ public class WeatherController {
 			} else if (select == 2) {
 				WeatherDTO wd = this.weatherService.findByCity(dtos);
 				this.weatherView.view(wd);
+
 			} else if (select == 3) {
 				System.out.println("프로그램이 종료 됩니다.");
 				flag = false;
