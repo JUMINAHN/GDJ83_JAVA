@@ -94,5 +94,22 @@ public class WeatherService {
 	// 도시명을 입력받아서 일치하는 날씨정보를 삭제하자
 
 	// 정렬 알고리즘 다시 사용해야할듯 ?
+	public WeatherDTO[] remove(WeatherDTO[] ar) { // findBy 메서드 재활용할 수 있다.
+		WeatherDTO findW = this.findByCity(ar); // 찾았어
+		WeatherDTO[] newAr = new WeatherDTO[ar.length - 1];
+		for (int i = 0; i < ar.length; i++) { // 버블 정렬
+			if (ar[i] == findW) {// 이거 제외하고
+				ar[i] = ar[i + 1];
+				WeatherDTO temp = ar[i + 2]; // 버블정렬?
+				ar[i + 1] = temp;
+			}
+		}
+		for (int i = 0; i < newAr.length; i++) {
+			newAr[i] = ar[i];
+		}
 
+		return newAr;
+	}
+
+//				for (int j = 0; j < newAr.length; j++) {
 }

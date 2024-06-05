@@ -25,7 +25,8 @@ public class WeatherController {
 			System.out.println("2. 날씨 정보 검색 ex)도시명을 검색해주세요"); // 어떤 도시의 하나만 알고 싶음
 			// Service에서 메서드 만들 것
 			System.out.println("3. 날씨 정보 추가");
-			System.out.println("4. 프로그램 종료");
+			System.out.println("4. 날씨 정보 삭제");
+			System.out.println("5. 프로그램 종료");
 			int select = sc.nextInt(); // if-else , switch-case 선택
 			if (select == 1) {
 				// 정보 출력 weatherview
@@ -37,6 +38,8 @@ public class WeatherController {
 				dtos = this.weatherService.addWeather(dtos); // 반환 받아야함
 				// 주소를 반환 -> 기존 주소에 : 새로바뀐 주소를 출려갛고싶으니까
 			} else if (select == 4) {
+				dtos = this.weatherService.remove(dtos);
+			} else if (select == 5) {
 				System.out.println("프로그램이 종료 됩니다.");
 				flag = false;
 
