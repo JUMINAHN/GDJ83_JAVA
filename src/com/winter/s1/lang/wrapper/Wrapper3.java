@@ -38,40 +38,46 @@ public class Wrapper3 {
 
 		// substring?
 		int sum = 0;
-		boolean flag = true;
-		String jumin1 = jumin.replace("-", "0");
-		for (int i = 0; i < jumin1.length(); i++) {
-			String n = jumin1.substring(i, i + 1);
-			int n1 = Integer.parseInt(n); // 추출한게 n이다
-			if (n1 >= 0 && n1 <= 5) {
-				sum += (n1 * (i + 2));
-			} else if (n1 == 6) { // jumin.charAt(6)
+		jumin = jumin.replace("-", "0");
+		for (int i = 0; i < jumin.length(); i++) { // 주민 안을 다 돌아
+			char c = jumin.charAt(i); // 0번째의 내용 c에
+			String c1 = String.valueOf(c);
+			int charNum = Integer.parseInt(c1); // 들어간 숫자 무엇인지? --> 지금은 9만 있음
+			if (i >= 0 && i <= 5) {
+				sum += charNum * (i + 2);
+			} else if (i == 6) {
 				sum += 0;
-			} else if (n1 >= 9 && n1 <= 12) {
-				sum += (n1 * (i - 7));
-			} else if (n1 == 7 || n1 == 8) {
-				sum += (n1 * (i + 2));
+			} else if (i >= 7 && i <= 8) {
+				sum += charNum * (i + 1);
+			} else if (i >= 9 && i <= 12) {
+				sum += charNum * (i - 7);
 			}
 		}
-		System.out.println("총합은 ? : " + sum);
-		int other = (sum % 11); // 나머지
-		System.out.println("나머지? : " + other);
+
+		System.out.println("총 합계는 ? : " + sum);
+		int other = 11 - (sum % 11); // 11에서 나머지 뺀 값
+		System.out.println("나머지 출력 : " + other);
+		char e = jumin.charAt(13);
+		String e1 = String.valueOf(e);
+		int endNum = Integer.parseInt(e1);
+		boolean result = true;
 		if (other >= 10) {
-			flag = ((other % 10) == jumin1.charAt(12));
+			result = ((other / 10) == endNum);
 		} else {
-			flag = (other == jumin1.charAt(12));
+			result = (other == endNum);
 		}
 
-		if (flag) {
-			System.out.println("유효성 검증에 성공했습니다.");
+		if (result) {
+			System.out.println("유효성 검증 성공");
 		} else {
-			System.out.println("유효성 검증에 실패했습니다.");
+			System.out.println("유효성 검증 실패");
 		}
 	}
+}
 
-	//
+//
 
-	// ========
+// ========
 
 //		String birth = jumin.substring(0, 2);
 //		// 노가다 방식
@@ -80,14 +86,14 @@ public class Wrapper3 {
 //		int result = Integer.parseInt(now) - Integer.parseInt(newBirth);
 //		System.out.println("현재 나이는 ? : " + (result + 1) + "살");
 
-	// Quiz2 -> 범위값 지정
+// Quiz2 -> 범위값 지정
 //		int birthValue = Integer.parseInt(birth);
 //		String newBirth = "";
 //		if (birthValue >= 25 && birthValue <= 99) {
 //			newBirth = "19" + birthValue;
 //		} else if {
 //			newBirth = "20" + birthValue;
-}
+
 //		System.out.println(newBirth);
 //		String now = "2024";
 //		int result = Integer.parseInt(now) - Integer.parseInt(newBirth);
