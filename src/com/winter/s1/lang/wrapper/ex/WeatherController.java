@@ -42,7 +42,6 @@ public class WeatherController {
 			} else if (select == 5) {
 				System.out.println("프로그램이 종료 됩니다.");
 				flag = false;
-
 				// **집에서 그림 구조그려보기
 			}
 		}

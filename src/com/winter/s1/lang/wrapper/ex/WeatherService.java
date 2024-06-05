@@ -86,30 +86,19 @@ public class WeatherService {
 		return newAr;
 	}
 
-	// remove weather
-	// 기존 배열에서 하나를 삭제하는 것
-	// 삭제하고 새로운 배열을 만들어라
-	// 힌트 컨티뉴
-
-	// 도시명을 입력받아서 일치하는 날씨정보를 삭제하자
-
-	// 정렬 알고리즘 다시 사용해야할듯 ?
-	public WeatherDTO[] remove(WeatherDTO[] ar) { // findBy 메서드 재활용할 수 있다.
-		WeatherDTO findW = this.findByCity(ar); // 찾았어
+	public WeatherDTO[] remove(WeatherDTO[] ar) {
+		WeatherDTO findW = this.findByCity(ar);
 		WeatherDTO[] newAr = new WeatherDTO[ar.length - 1];
-		for (int i = 0; i < ar.length; i++) { // 버블 정렬
-			if (ar[i] == findW) {// 이거 제외하고
-				ar[i] = ar[i + 1];
-				WeatherDTO temp = ar[i + 2]; // 버블정렬?
-				ar[i + 1] = temp;
-			}
-		}
 		for (int i = 0; i < newAr.length; i++) {
-			newAr[i] = ar[i];
+			if (findW == ar[i]) { // 2면
+				for (int j = 0; j < ar.length - i; j++) {// 3 -4만
+					newAr[i] = ar[i + 1];
+				}
+			}
+			newAr[i] = ar[i]; // 이게 범위값을 초과하니까
 		}
 
 		return newAr;
 	}
 
-//				for (int j = 0; j < newAr.length; j++) {
 }
