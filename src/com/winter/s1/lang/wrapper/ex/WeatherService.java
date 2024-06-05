@@ -66,28 +66,33 @@ public class WeatherService {
 	// 추가하고 1번누르면 5개 --> 추가하고 1번 누르면 6개
 	// 배열의 크기는 바꿔서 넣어야 함
 
-	public WeatherDTO[] addWeather(WeatherDTO[] dtos) {// 기존 배열을 받아올거야
-		WeatherDTO[] newDtos = new WeatherDTO[dtos.length + 1]; // 개수 기존보다 늘릴거야
-		for (int i = 0; i < dtos.length; i++) {
-			newDtos[i] = dtos[i];
+	public WeatherDTO[] addWeather(WeatherDTO[] ar) {
+		// 선생님 풀이
+		WeatherDTO weatherDTO = new WeatherDTO();
+		System.out.println("도시명을 입력하세요 : ");
+		weatherDTO.setCity(sc.next());
+		System.out.println("기온을 입력하세요 : ");
+		weatherDTO.setGion(sc.nextDouble());
+		System.out.println("현재 상태 입력 : ");
+		weatherDTO.setStatus(sc.next());
+		System.out.println("습도를 입력하세요 : ");
+		weatherDTO.setHumidity(sc.nextInt());
+
+		WeatherDTO[] newAr = new WeatherDTO[ar.length + 1];
+		for (int i = 0; i < ar.length; i++) {
+			newAr[i] = ar[i];
 		}
-		// 배열에 객체가 없다
-		WeatherDTO wtd = new WeatherDTO();
-		newDtos[dtos.length] = wtd;
-
-		System.out.println("도시명을 입력해주세요 : ");
-		String city = sc.next();
-		System.out.println("온도를 입력해주세요 : ");
-		Double gion = sc.nextDouble();
-		System.out.println("날씨 상태를 입력해주세요 : ");
-		String status = sc.next();
-		System.out.println("습도를 입력해주세요 : ");
-		int humidity = sc.nextInt(); // 확인 필요함
-
-		newDtos[dtos.length].setCity(city);
-		newDtos[dtos.length].setGion(gion);
-		newDtos[dtos.length].setStatus(status);
-		newDtos[dtos.length].setHumidity(humidity);
-		return newDtos;
+		newAr[ar.length] = weatherDTO; // 한개가 추가되는 효과를 볼 수 있음~
+		return newAr;
 	}
+
+	// remove weather
+	// 기존 배열에서 하나를 삭제하는 것
+	// 삭제하고 새로운 배열을 만들어라
+	// 힌트 컨티뉴
+
+	// 도시명을 입력받아서 일치하는 날씨정보를 삭제하자
+
+	// 정렬 알고리즘 다시 사용해야할듯 ?
+
 }
