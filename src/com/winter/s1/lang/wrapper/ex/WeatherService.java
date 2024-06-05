@@ -1,9 +1,7 @@
 package com.winter.s1.lang.wrapper.ex;
 
 public class WeatherService {
-	// Controller -> 계층중 하나
-	// Business Layer (층) -> 실제 코드 해야되야할 거, 데이터 전처리 후처리
-	// DAO Layer - 데이터 베이스에 접근하는 객체
+
 	private StringBuffer sb; // null
 
 	public WeatherService() { // 기본 생성자
@@ -14,23 +12,42 @@ public class WeatherService {
 		this.sb.append("-광주 , 10.6 - 태풍 - 80"); // 4개 다들어가 있음
 	}
 
-	public void init() {
+	public WeatherDTO[] init() {
 		String info = this.sb.toString();
-		System.out.println(info);
+		info = info.replace(",", "-"); // 순서 --> 코드 순서를 읽어보자
+		// System.out.println(info); // info를 받아서 스플릿한다.
+		WeatherDTO[] dtos = this.getWeathers(info); // WeatherDTO가 있는 배열을 주겠다.
+		return dtos;
+	}
 
-		info = info.replace(",", "-");
+	private WeatherDTO[] getWeathers(String info) { // info를 받아서 스플릿한다.
+		// 선생님 풀이
+		String[] infos = info.split("-"); // info가 스트링
 
-		String[] infos = info.split("-");
-		for (int i = 0; i < infos.length; i++) {
-			infos[i] = infos[i].trim(); // ar[i]에 모든 데이터가 담겨있음
+		int idx = 0;
+		WeatherDTO[] dtos = new WeatherDTO[infos.length / 4]; // 4번의 객체가 있어야함 --> 그림을 그려넣는게 정확함
+
+		// 방법 2
+		for (int i = 0; i < dtos.length; i++) {
+			WeatherDTO w = new WeatherDTO();
+			w.setCity(infos[idx++].trim());
+			w.setGion(Double.parseDouble(infos[idx++].trim()));
+			w.setStatus(infos[idx++].trim());
+			w.setHumidity(Integer.parseInt(infos[idx++].trim()));
+			dtos[i] = w;
 		}
-
-		//선생님 풀이
-		WeatherDTO[] dtos = new WeatherDTO[infos.length / 4]; //4번의 객체가 있어야함 --> 그림을 그려넣는게 정확함
-		//dtos[?] = WeatehrDTO를 때려넣는 것
-		for(int i=0; i < dtos.length; i++) {
-			dtos[i] =
-		}
+		return dtos; // 배열명을 리턴해주자
 	}
 
 }
+
+// 방법 1
+//		for (int i = 0; i < infos.length; i = i + 4) { // 16번도는 것
+//			WeatherDTO w = new WeatherDTO();
+//			w.setCity(infos[i]);
+//			w.setGion(Double.parseDouble(infos[i + 1]));
+//			w.setStatus(infos[i + 2]);
+//			w.setHumidity(Integer.parseInt(infos[i + 3]));
+//			dtos[i] = w;
+//			idx++;
+//		}

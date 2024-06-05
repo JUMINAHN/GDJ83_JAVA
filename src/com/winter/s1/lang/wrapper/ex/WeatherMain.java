@@ -6,7 +6,9 @@ public class WeatherMain {
 		// DTO (Data Transfer Object) == 데이터를 담고 있느 ㄴ객체
 		// VO (Value Object)
 
-		WeatherService ws = new WeatherService(); // Stringbuffer안에 지금 생성되고 서울 이런거 생김
-		ws.init();
+		WeatherDTO[] dto = new WeatherService().init();
+		WeatherView w = new WeatherView();
+		w.view(dto);
+
 	}
 }
