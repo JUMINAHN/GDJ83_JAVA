@@ -1,6 +1,7 @@
 package com.winter.s1.lang.wrapper.ex;
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class WeatherService {
 
@@ -19,10 +20,35 @@ public class WeatherService {
 		String info = this.sb.toString();
 		info = info.replace(",", "-"); // 순서 --> 코드 순서를 읽어보자
 		// System.out.println(info); // info를 받아서 스플릿한다.
-		WeatherDTO[] dtos = this.getWeathers(info); // WeatherDTO가 있는 배열을 주겠다.
+		// WeatherDTO[] dtos = this.getWeathers(info); // WeatherDTO가 있는 배열을 주겠다.
+		WeatherDTO[] dtos = this.useTokenizer(info);
 		return dtos;
 	}
 
+	// info에는 한줄로 쭉있어~
+	// 여러개가 모여서 하나의 클래스, dto를 구성해야할 때 Stringtokenizer가 편할 것
+	private WeatherDTO[] useTokenizer(String info) { // split을 사용하지 않고 parsing 해보자
+		StringTokenizer st = new StringTokenizer(info, "-"); // 코드 잘보기ㅜㅜ
+		// 자를 문자열의 info를 받아옴 --> 날씨 정보 4개
+		// 빼기 기준으로 잘라서 각각에 맞게 넣으려 하는 것
+		// String배열이 아니라 tokenizer을 이용해서 한번 해보자
+		WeatherDTO[] dtos = new WeatherDTO[4];
+		int i = 0;
+		// 배열에 짜르고 넣기 간소화하는 것
+		while (st.hasMoreTokens()) {
+			// trim을 안하면 공백자체도 얘가 문자로 이해하기 때문에 parse가 안된다는 점을 명심하고 유의하자
+			WeatherDTO w = new WeatherDTO();
+			w.setCity(st.nextToken().trim()); // 한번짜를때 4개씩 잘리니까 -> for문은 에러 뜰 것
+			w.setGion(Double.parseDouble(st.nextToken().trim()));
+			w.setStatus(st.nextToken().trim());
+			w.setHumidity(Integer.parseInt(st.nextToken().trim()));
+			dtos[i] = w;
+			i++;
+		}
+		return dtos;
+	}
+
+	// 인덱스 번호를 계속 생각해야 한다. --> Split은 짤랏을 때 토큰이 독립적인것 = 이름만 있는 것
 	private WeatherDTO[] getWeathers(String info) { // info를 받아서 스플릿한다.
 		String[] infos = info.split("-"); // info가 스트링
 		int idx = 0;
