@@ -1,5 +1,6 @@
 package com.winter.s1.lang.wrapper.ex;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -28,6 +29,9 @@ public class WeatherService {
 	// info에는 한줄로 쭉있어~
 	// 여러개가 모여서 하나의 클래스, dto를 구성해야할 때 Stringtokenizer가 편할 것
 	private WeatherDTO[] useTokenizer(String info) { // split을 사용하지 않고 parsing 해보자
+		ArrayList<WeatherDTO> arrays = new ArrayList();
+		// arraylist 이용
+
 		StringTokenizer st = new StringTokenizer(info, "-"); // 코드 잘보기ㅜㅜ
 		// 자를 문자열의 info를 받아옴 --> 날씨 정보 4개
 		// 빼기 기준으로 잘라서 각각에 맞게 넣으려 하는 것
@@ -42,8 +46,9 @@ public class WeatherService {
 			w.setGion(Double.parseDouble(st.nextToken().trim()));
 			w.setStatus(st.nextToken().trim());
 			w.setHumidity(Integer.parseInt(st.nextToken().trim()));
-			dtos[i] = w;
-			i++;
+			arrays.add(w);
+			// dtos[i] = w;
+			// i++;
 		}
 		return dtos;
 	}
