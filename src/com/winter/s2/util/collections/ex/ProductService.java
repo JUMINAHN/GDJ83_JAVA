@@ -13,32 +13,30 @@ public class ProductService {
 		sb.append("30000, 노키아, 20");
 	}
 
-	// Quiz init() 메서드 완성하기
-
-	public ArrayList<ProductDTO> init() { // return
-		// 상기 내역을 파싱해서 --> product DTO 객체에 맞는 값을 집어 넣자
-		// 얘네를 이제 ArrayList에 만들어 집어 넣자!
-		String sb2 = sb.toString();
-		StringTokenizer st = new StringTokenizer(sb2, ",");
+	// 선생님 풀이
+	public ArrayList<ProductDTO> init() {
+		String datas = this.sb.toString();
 		ArrayList<ProductDTO> ar = new ArrayList(); // productDTO 제네릭해줘
-
-		while (st.hasMoreTokens()) { // int string int
-			// 배열
-			ProductDTO p = new ProductDTO();
-			p.setPrice(Integer.valueOf(st.nextToken().trim()));
-			// p.setPrice(Integer.parseInt(st.nextToken().trim()));
-			p.setName(st.nextToken().trim());
-			p.setStock(Integer.valueOf(st.nextToken().trim()));
-			// p.setStock(Integer.parseInt(st.nextToken().trim()));
-			ar.add(p);
+		StringTokenizer st = new StringTokenizer(datas, ",");
+		// 돌렸을 떄 어떻게 나올까 예상 --> 추측한 그대로 나오는가:
+		while (st.hasMoreTokens()) {
+			ProductDTO productDTO = new ProductDTO();
+			productDTO.setPrice(Integer.parseInt(st.nextToken().trim()));
+			productDTO.setName(st.nextToken().trim());
+			productDTO.setStock(Integer.parseInt(st.nextToken().trim()));
+			ar.add(productDTO);
 		}
-
-//		for (int i = 0; i < ar.size(); i++) {
-//			System.out.println(ar.get(i).getPrice());
-//			System.out.println(ar.get(i).getName());
-//			System.out.println(ar.get(i).getStock());
-//		}
-
 		return ar;
 	}
+
+	// 기존의 가방에다가 새상품을 추가 --> ArrayList에
+	// void 이건 수정 불가
+	// 하기에 새로운 상품을 만드는 것 --> 새로운 상품 new ProductDTO를 해라~
+	// 상품 이름도 없고 재고도 없는 것을 입력받아서 만든 상품을 기존의 가방에 추가하자~
+	// 기존 가방을 받아와서 해라~
+	// 추가하고 메인으로 돌아갔을 때 for문 돌아가서 찍었을 떄 새로운 제품까지 찍는다.
+	public void addProudct(ArrayList<ProductDTO> ar) {
+
+	}
+
 }
