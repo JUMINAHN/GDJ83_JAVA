@@ -18,10 +18,13 @@ public class SetMain3 {
 		// 몇개가든지는 알수없음 -> 열거형이라서 하나 꺼내고 안꺼내고 반복
 		// 몇개인지 몰라서 while --> 가끔나옴
 
+		// MAP은 다음주에~
+
 		// 다음거가 있으면 --> set은 하나씩 꺼낼때 --> 이렇게쓴다고만 알아두자
 		while (ir.hasNext()) {
 			Integer num = ir.next();
 			System.out.println(num);
 		}
+
 	}
 }
