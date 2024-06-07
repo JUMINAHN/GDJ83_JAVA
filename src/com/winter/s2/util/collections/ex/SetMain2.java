@@ -12,18 +12,21 @@ public class SetMain2 {
 		// 만약 첫번째 뽑은 번호가 6
 		// 6이 나올 확률이 있으면 중복
 		int[] ar = new int[6];
+		int[] newAr = new int[6];
+		for (int i = 0; i < ar.length; i++) {//QQQ뭘까?
+			if () {//같지 않을경우 기존값들과 --> 기존값들을 새로운 배열에 저장?
+				ar[i] = num;				
+			}
+		}
 
 		// 배열에서 중복제거 arraylist에서 중복제거
 
-		ArrayList<Integer> list = new ArrayList(); // 6번 뽑아야함
 		// for든 while든 상관없다.
+		ArrayList<Integer> list = new ArrayList(); // 6번 뽑아야함
 //		while(list.size() != 6) {
 //			
 //		}
 		// index번호 1개당 번호 1개 --> 안겹치게 만들어오기 (homework)
-		for (int i = 0; i < ar.length; i++) {
-			System.out.println(ar[i]);
-		}
 
 		HashSet<Integer> hs = new HashSet<Integer>(); // 중복값 생기면 버려버림
 		while (hs.size() != 6) {
