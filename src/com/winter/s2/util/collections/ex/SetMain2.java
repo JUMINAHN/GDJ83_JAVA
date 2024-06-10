@@ -7,16 +7,18 @@ import java.util.Random;
 
 public class SetMain2 {
 	public static void main(String[] args) {
+
+		String n = "123";
+		Object obj = n;
+		System.out.println(obj instanceof String); // 이런 귀찮음 줄일려고 generic만듬
+
 		Random random = new Random();// 랜덤하게 6번
 		int num = random.nextInt(45) + 1;// 1부터 45까지
 		// 만약 첫번째 뽑은 번호가 6
 		// 6이 나올 확률이 있으면 중복
 		int[] ar = new int[6];
-		int[] newAr = new int[6];
-		for (int i = 0; i < ar.length; i++) {//QQQ뭘까?
-			if () {//같지 않을경우 기존값들과 --> 기존값들을 새로운 배열에 저장?
-				ar[i] = num;				
-			}
+		for (int i = 0; i < ar.length; i++) {// 3이면 2만큼 돌아
+
 		}
 
 		// 배열에서 중복제거 arraylist에서 중복제거
