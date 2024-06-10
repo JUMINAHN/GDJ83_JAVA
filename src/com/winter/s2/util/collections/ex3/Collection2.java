@@ -1,11 +1,12 @@
 package com.winter.s2.util.collections.ex3;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class Collection2 {
 	// Arraylist를 받아서 그 안에 있는 것을 사용하려고 하는 것
 	// 매개변수는 중요치 않다.
-	public void useList(ArrayList<Integer> ar) {
+	public void useList(List<Integer> ar) {
 		// for(초기식;조건식;증감식){}
 //		for(int i=0; i < ar.size(); i++) {
 //			ar.get(i);
@@ -19,6 +20,10 @@ public class Collection2 {
 		}
 		// 명확하게 무슨 타입인지 알 수 있으니까 이런 타입을 많이 씀
 
+	}
+
+	public void usemap(Map<String, Integer> map) {
+		map.get(""); // 부모형태로 받아서 안에 있는 것을 사용
 	}
 
 }

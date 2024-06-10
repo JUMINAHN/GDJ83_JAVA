@@ -10,7 +10,6 @@ public class CollectionMain {
 		// ArrayList<Integer> ar = c1.makeList();
 		// c2.useList(ar); //만든 list를 c2로 보내는 것
 		// 상기 내용과 같다.
-		// useList --> 다른 리스트 값을 가져오는 것
-		c2.useList(c1.makeList());
+		c2.useList(c1.makeList()); // ArrayList를 받으려했는데 LinkedList로 바꿨음 --> 이래서 오류
 	}
 }
