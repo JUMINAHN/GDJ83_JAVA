@@ -5,11 +5,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class ReadStudy {
 
-	public ArrayList<MenuDTO> read() { // 이 메서드를 호출하면 파일을 읽어올 것임
+	public List<MenuDTO> read() { // 이 메서드를 호출하면 파일을 읽어올 것임
 		// info Text파일을 읽어오기
 		// 한줄씩 일어오면 안되니까
 		// 1.항목별로 파씽 -> 읽어서 파씽 후 출력
@@ -17,7 +18,7 @@ public class ReadStudy {
 		File file = new File("C:\\study", "info.txt");
 		FileReader fr = null;
 		BufferedReader br = null;
-		ArrayList<MenuDTO> ar2 = new ArrayList();
+		List<MenuDTO> ar2 = new ArrayList();
 		try {
 			fr = new FileReader(file); // 예외 발생
 			br = new BufferedReader(fr);
@@ -31,8 +32,8 @@ public class ReadStudy {
 //				String[] ar = s.split(",");
 				while (st.hasMoreTokens()) {
 					m.setMenuName(st.nextToken().trim());
-					m.setKcal(Integer.parseInt(st.nextToken().trim()));
 					m.setPrice(Integer.parseInt(st.nextToken().trim()));
+					m.setKcal(Integer.parseInt(st.nextToken().trim()));
 					ar2.add(m);
 				}
 			}
