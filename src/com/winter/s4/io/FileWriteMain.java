@@ -28,6 +28,9 @@ public class FileWriteMain {
 					break;
 				}
 				fw.write(s + "\r\n"); // write는 보조 스트림을 쓸 필요가 없게 String을 담을 수 있는 타입이 있음 --> 작성
+				// buffer를 밀어내고 다시땡겨오는 것 --> 네트워크를 통할때
+				// **??
+				fw.flush();
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

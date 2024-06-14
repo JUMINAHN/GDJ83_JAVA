@@ -1,6 +1,6 @@
 package com.winter.s1.lang.wrapper.ex;
 
-public class WeatherDTO {
+public class List<WeatherDTO> {
 	// DTO의 모든 멤버 변수는 private로 설정한다.
 	// getter * setter 필요
 
